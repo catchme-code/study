@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,7 +44,12 @@ namespace WindowsFormsApp2
             }
 
 
+
             conn.Close();
+            String today = DateTime.Today.ToShortDateString();
+            label1.Text = "오늘-"+today;
         }
+
+        
     }
 }
