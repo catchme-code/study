@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,10 +22,19 @@ namespace WindowsFormsApp2
         public Form1()
         {
             InitializeComponent();
+
+            PictureBox2.Load(@"C:\Users\sm066\Pictures\Saved Pictures\google.png");
+            PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+
+            PictureBox1.Load(@"C:\Users\sm066\Pictures\Saved Pictures\glass.png");
+            PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             String text = textBox1.Text;
             Console.WriteLine(text);
             String Constr = "SERVER=" + server + "; DATABASE=" + database + ";UID=" + uid + ";PASSWORD=" + password + ";";// 위의 선언한 변수 값 적용
@@ -42,6 +51,57 @@ namespace WindowsFormsApp2
             
             Form2 f2 = new Form2();
             f2.Show();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            textBox1.Text = "검색해주세요";
+            textBox1.ForeColor = Color.LightGray;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            
+        
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e) {
+
+            if (textBox1.Text == "검색해주세요")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == " ") {
+                textBox1.Text = "검색해주세요";
+                textBox1.ForeColor = Color.LightGray;
+
+            }
+        }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }
